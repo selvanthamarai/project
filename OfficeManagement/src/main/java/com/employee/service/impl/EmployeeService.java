@@ -1,4 +1,4 @@
-package com.employee.service;
+package com.employee.service.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,28 +13,28 @@ import com.employee.repository.EmployeeRepository;
 @Component
 public class EmployeeService {
 	@Autowired
-	EmployeeRepository emp;
+	EmployeeRepository employeeRepository;
 
-	public Employee insertDetail(Employee C) {
-		return emp.save(C);
+	public Employee insertDetail(Employee employee) {
+		return employeeRepository.save(employee);
 
 	}
 
 	public List<Employee> get() {
-		return emp.findAll();
+		return employeeRepository.findAll();
 	}
 
 	public Optional<Employee> getid(long id) {
-		return emp.findById(id);
+		return employeeRepository.findById(id);
 	}
 
-	public Employee up(Employee D) {
-		return emp.save(D);
+	public Employee update(Employee employee) {
+		return employeeRepository.save(employee);
 
 	}
 
 	public void deleteall() {
-		emp.deleteAll();
+		employeeRepository.deleteAll();
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.employee.controller;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -10,12 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import com.employee.model.Employee;
 
-import com.employee.service.EmployeeService;
+import com.employee.service.impl.EmployeeService;
+
 
 @RestController
 public class EmployeeController {
@@ -23,8 +25,8 @@ public class EmployeeController {
 	EmployeeService service;
 
 	@PostMapping("employee")
-	public Employee insert(@RequestBody Employee A) {
-		return service.insertDetail(A);
+	public Employee insert(@RequestBody Employee employee) {
+		return service.insertDetail(employee);
 
 	}
 
@@ -39,8 +41,8 @@ public class EmployeeController {
 	}
 
 	@PutMapping("employee/{id}")
-	public Employee update(@PathVariable long id, @RequestBody Employee B) {
-		return service.up(B);
+	public Employee update(@PathVariable long id, @RequestBody Employee employee) {
+		return service.update(employee);
 
 	}
 

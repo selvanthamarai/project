@@ -1,59 +1,68 @@
 package com.employee.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 @Entity
-public class Employee {
+public class Employee implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long Id;
+	private long id;
 
-	private String Name;
+	private String name;
 
-	private String Department;
+	private String department;
 
-	private Date DOJ;
-
-	
+	private Date doj;
 
 	public long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(long id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getDepartment() {
-		return Department;
+		return department;
 	}
 
 	public void setDepartment(String department) {
-		Department = department;
+		this.department = department;
 	}
 
-	public Date getDOJ() {
-		return DOJ;
+	public Date getDoj() {
+		return doj;
 	}
 
-	public void setDOJ(Date dOJ) {
-		DOJ = dOJ;
+	public void setDoj(Date doj) {
+		this.doj = doj;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", department=" + department + ", doj=" + doj + "]";
+	}
+
+	 
 
 }
