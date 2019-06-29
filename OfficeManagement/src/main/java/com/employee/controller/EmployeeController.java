@@ -18,34 +18,33 @@ import com.employee.model.Employee;
 import com.employee.service.EmployeeService;
 
 @RestController
-@RequestMapping("post")
 public class EmployeeController {
 	@Autowired
 	EmployeeService service;
 
-	@PostMapping("insert")
+	@PostMapping("employee")
 	public Employee insert(@RequestBody Employee A) {
 		return service.insertDetail(A);
 
 	}
 
-	@GetMapping("getall")
+	@GetMapping("employee")
 	public List<Employee> getall() {
 		return service.get();
 	}
 
-	@GetMapping("get/{id}")
+	@GetMapping("employee/{id}")
 	public Optional<Employee> getById(@PathVariable long id) {
 		return service.getid(id);
 	}
 
-	@PutMapping("update/{id}")
+	@PutMapping("employee/{id}")
 	public Employee update(@PathVariable long id, @RequestBody Employee B) {
 		return service.up(B);
 
 	}
 
-	@DeleteMapping("delete")
+	@DeleteMapping("employee")
 	public void delete() {
 		service.deleteall();
 	}
