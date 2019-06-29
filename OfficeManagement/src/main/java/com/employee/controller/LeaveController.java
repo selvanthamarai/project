@@ -10,38 +10,40 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.employee.model.Leave;
 import com.employee.service.impl.LeaveService;
 
 @RestController
+@RequestMapping("leave")
 public class LeaveController {
 	@Autowired
 	private LeaveService service;
 
-	@PostMapping("leave")
+	@PostMapping("create")
 	public Leave putLeave(@RequestBody Leave put) {
 		return service.putLeave(put);
 	}
 
-	@GetMapping("leave")
+	@GetMapping("all")
 	public List<Leave> getAll() {
 		return service.getAll();
 	}
 
-	@GetMapping("leave/{id}")
+	@GetMapping("{id}")
 	public Optional<Leave> getById(@PathVariable long id) {
 		return service.getid(id);
 	}
 
-	@PutMapping("leave/{id}")
+	@PutMapping("{id}")
 	public Leave update(@PathVariable long id, @RequestBody Leave update) {
 		return service.update(update);
 
 	}
 
-	@DeleteMapping("leave")
+	@DeleteMapping
 	public void delete() {
 		service.deleteall();
 	}
