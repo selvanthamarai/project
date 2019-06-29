@@ -3,13 +3,15 @@ package com.employee.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.service.spi.ServiceException;
+
 import com.employee.model.Employee;
 
 
 public interface EmployeeService {
 
 	
-    public Employee insertDetail(Employee employee);
+    public Employee insertDetail(Employee employee) throws ServiceException;
 	
 	public List<Employee> get();
 	

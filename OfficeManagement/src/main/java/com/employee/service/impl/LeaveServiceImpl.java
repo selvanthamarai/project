@@ -3,24 +3,39 @@ package com.employee.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.employee.model.Leave;
 import com.employee.repository.LeaveRepository;
+import com.employee.services.LeaveService;
+
 @Component
-public class LeaveService {
+public class LeaveServiceImpl implements LeaveService {
 	@Autowired
 	private LeaveRepository repository;
 
-	public Leave putLeave(Leave  leave) {
-		return repository.save(leave);
+
+	public Leave putLeave(Leave leave) throws ServiceException {
+		try {
+			
+			Leave leaveObj = repository.save(leave);
+			return leaveObj;
+
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 	public List<Leave> getAll() {
-		return (List<Leave>) repository.findAll();
-	}
+
 	
+	  return repository.findAll();
+		
+
+	}
+
 	public Optional<Leave> getid(long id) {
 
 		return repository.findById(id);
@@ -29,18 +44,20 @@ public class LeaveService {
 
 	public Leave update(Leave leave) {
 
-		return repository.save(leave);
+try {
+			
+			Leave leaveObj = repository.save(leave);
+			return leaveObj;
 
+		} catch (Exception e) {
+			return null;
+		}
 	}
-
-
 
 	public void deleteall() {
 
 		repository.deleteAll();
 
 	}
-	
-	
 
 }
