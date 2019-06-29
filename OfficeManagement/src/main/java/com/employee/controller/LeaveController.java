@@ -21,16 +21,10 @@ import com.employee.service.impl.LeaveService;
 public class LeaveController {
 	@Autowired
 	private LeaveService service;
-
-<<<<<<< HEAD
-	@PostMapping("leave")
-	public Leave putLeave(@RequestBody Leave leave) {
-		return service.putLeave(leave);
-=======
+ 
 	@PostMapping("create")
 	public Leave putLeave(@RequestBody Leave put) {
 		return service.putLeave(put);
->>>>>>> f3325e30f87aa82d1bb9a541746feee99382988d
 	}
 
 	@GetMapping("all")
@@ -43,16 +37,10 @@ public class LeaveController {
 		return service.getid(id);
 	}
 
-<<<<<<< HEAD
-	@PutMapping("leave/{id}")
-	public Leave update(@PathVariable long id, @RequestBody Leave leave) {
-		return service.update(leave);
-=======
+ 
 	@PutMapping("{id}")
 	public Leave update(@PathVariable long id, @RequestBody Leave update) {
 		return service.update(update);
->>>>>>> f3325e30f87aa82d1bb9a541746feee99382988d
-
 	}
 
 	@DeleteMapping
