@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.employee.model.Leave;
-import com.employee.service.LeaveService;
+import com.employee.service.impl.LeaveService;
 
 @RestController
 public class LeaveController {
