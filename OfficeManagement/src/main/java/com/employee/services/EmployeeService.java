@@ -5,7 +5,8 @@ import java.util.Optional;
 
 import com.employee.model.Employee;
 
-public interface EmployeeServiceIn {
+
+public interface EmployeeService {
 
 	
     public Employee insertDetail(Employee employee);

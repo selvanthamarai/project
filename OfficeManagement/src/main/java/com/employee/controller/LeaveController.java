@@ -21,8 +21,8 @@ public class LeaveController {
 	private LeaveService service;
 
 	@PostMapping("leave")
-	public Leave putLeave(@RequestBody Leave put) {
-		return service.putLeave(put);
+	public Leave putLeave(@RequestBody Leave leave) {
+		return service.putLeave(leave);
 	}
 
 	@GetMapping("leave")
@@ -36,8 +36,8 @@ public class LeaveController {
 	}
 
 	@PutMapping("leave/{id}")
-	public Leave update(@PathVariable long id, @RequestBody Leave update) {
-		return service.update(update);
+	public Leave update(@PathVariable long id, @RequestBody Leave leave) {
+		return service.update(leave);
 
 	}
 

@@ -13,8 +13,8 @@ public class LeaveService {
 	@Autowired
 	private LeaveRepository repository;
 
-	public Leave putLeave(Leave  put) {
-		return repository.save(put);
+	public Leave putLeave(Leave  leave) {
+		return repository.save(leave);
 	}
 
 	public List<Leave> getAll() {
@@ -27,9 +27,9 @@ public class LeaveService {
 
 	}
 
-	public Leave update(Leave id) {
+	public Leave update(Leave leave) {
 
-		return repository.save(id);
+		return repository.save(leave);
 
 	}
 
